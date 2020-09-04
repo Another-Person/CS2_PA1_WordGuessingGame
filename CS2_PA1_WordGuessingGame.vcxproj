@@ -140,9 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="myrandom.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="thewords.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="myrandom.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

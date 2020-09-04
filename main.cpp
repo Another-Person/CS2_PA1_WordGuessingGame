@@ -13,6 +13,18 @@
 #include <string>
 #include <cstdlib>
 
+#include "myrandom.h"
+
+
+/*	openFile
+ *	Opens a file and returns the handle for reading. If the supplied filename cannot be opened, prompts the user to either provide a new filename or to terminate the program.
+ *	Parameter:
+ *	std::string fileName -- a string containing the file name to try and open
+ * 
+ *	Return:
+ *	Returns an std::ifstream with the read handle of the opened file
+ *
+ */
 std::ifstream openFile(std::string fileName)
 {
 	std::ifstream file{ fileName };
@@ -41,12 +53,16 @@ int main()
 	std::string wordFileName{ "words.txt" };
 	std::ifstream wordsFile{ openFile(wordFileName) };
 
-	while (wordsFile)
+	std::vector<std::string> wordsList;
+
+	while (wordsFile) // loop through the file and put all of the words into wordsList
 	{
 		std::string fileText{};
 		wordsFile >> fileText;
-		std::cout << fileText << "\n";
+		wordsList.push_back(fileText);
 	}
+
+
 
 	return 0;
 }
