@@ -11,7 +11,7 @@ doom
 dog
 guidelines
 notebook
-extenstion
+extension
 window
 solution
 control

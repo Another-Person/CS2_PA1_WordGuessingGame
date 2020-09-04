@@ -62,7 +62,10 @@ int main()
 		wordsList.push_back(fileText);
 	}
 
+	int randomWordNumber{ getRandomInteger(0, wordsList.size()) };
+	std::string randomWord{ wordsList.at(randomWordNumber) };
 
+	std::cout << "The random word is: " << randomWord << "!\n";
 
 	return 0;
 }
