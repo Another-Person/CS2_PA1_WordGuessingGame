@@ -1,6 +1,5 @@
 /*	myrandom.cpp
  *	I'm sure that using rand would be *fine* (I mean, you used it in your example) but why not be extra and set up a Mersenne Twister just because?
- *
  */
 
 #include <random>

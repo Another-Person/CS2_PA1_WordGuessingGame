@@ -32,7 +32,7 @@ std::ifstream openFile(std::string fileName)
 	if (!file)
 	{
 		std::cerr << "The file " << fileName << " could not be opened.\n";
-		std::cerr << "Please enter a new filename, or type \"exit\" to exit the program.\n";
+		std::cerr << "Please enter a new filename, or type \"exit\" to exit the program." << std::endl;
 		std::string input;
 		std::cin >> input;
 		if (input != "exit" )
@@ -46,6 +46,21 @@ std::ifstream openFile(std::string fileName)
 	}
 
 	return file;
+}
+
+
+bool GameLoop(std::vector<std::string> wordList)
+{
+	int randomWordNumber{ getRandomInteger(0, wordList.size()) };
+	std::string randomWord{ wordList.at(randomWordNumber) };
+	std::string blankWord{};
+	for (int i = 0; i < randomWord.length(); i++)
+	{
+		blankWord.append(" *");
+	}
+	std::cout << blankWord << "\n";
+
+	return false;
 }
 
 int main()
@@ -62,10 +77,19 @@ int main()
 		wordsList.push_back(fileText);
 	}
 
-	int randomWordNumber{ getRandomInteger(0, wordsList.size()) };
-	std::string randomWord{ wordsList.at(randomWordNumber) };
+	// Some introductry text for the player
+	std::cout << "\n";
+	std::cout << "Welcome to WordGuess: the exciting word guessing game!\n";
+	std::cout << "You will be shown a series of blank spaces representing letters in a word. Guess the letters, and when you're ready, try guessing the whole word!\n";
+	std::cout << "But beware, if you make more than 6 wrong guesses, then you will lose!\n";
 
-	std::cout << "The random word is: " << randomWord << "!\n";
+	bool playAGame{ true };
+
+	while (playAGame)
+	{
+		playAGame = GameLoop(wordsList);
+		
+	}
 
 	return 0;
 }

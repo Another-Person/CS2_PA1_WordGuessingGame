@@ -21,6 +21,9 @@
     <ClCompile Include="myrandom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gameloop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="thewords.txt">
@@ -29,6 +32,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="myrandom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gameloop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
