@@ -73,6 +73,7 @@ void play(CurrentWord& word)
 	int incorrectGuesses{ 0 };
 	bool hasWon{ false };
 	std::string guessedLetters{ "" };
+	guessedLetters.reserve(12);
 	while (incorrectGuesses != 6 && (!hasWon))
 	{
 		std::cout << "So far, you have guessed: " << guessedLetters << "\n";
@@ -91,10 +92,6 @@ void play(CurrentWord& word)
 				std::cout << "Sorry, " << input << "  is not in the word!\n";
 				incorrectGuesses++;
 			}
-		}
-		else if (input.length() == 0)
-		{
-			// Don't count a blank entry as a guess, just ignore it and ask for another guess
 		}
 		else
 		{
