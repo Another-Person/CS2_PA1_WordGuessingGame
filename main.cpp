@@ -74,7 +74,7 @@ int main()
 	{
 		CurrentWord roundWord{ getRandomWord(wordsList) };
 		play(roundWord);
-		playAGame = false;
+		playAGame = playAgain();
 	}
 
 	return 0;
