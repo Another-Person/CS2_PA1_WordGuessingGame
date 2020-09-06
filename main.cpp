@@ -55,7 +55,7 @@ int main()
 
 	std::vector<std::string> wordsList;
 
-	while (wordsFile) // loop through the file and put all of the words into wordsList
+	while (!wordsFile.eof()) // loop through the file and put all of the words into wordsList
 	{
 		std::string fileText{};
 		wordsFile >> fileText;
